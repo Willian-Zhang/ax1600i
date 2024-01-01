@@ -259,7 +259,7 @@ impl<'a> Psu<'a> {
             let voltage = self.get_rail_voltage();
             let current = self.get_rail_current();
             let power = self.get_rail_watts();
-            println!("Rail {}: voltage = {} v, current = {} a, power = {} w", i, voltage, current, power);
+            println!("Rail {}: voltage = {:>5.2} v, current = {:>5.2} a, power = {:>5} w", i, voltage, current, power);
         }
 
         for i in 0..12 {
@@ -270,7 +270,7 @@ impl<'a> Psu<'a> {
             let power = self.get_12v_rail_power();
             let ocp_limit = self.get_12v_rail_ocp_limit();
             if power > 0.0 {
-                println!("12v page {}: voltage = {} v, current = {} a, power = {}, ocp limit = {}", i, voltage, current, power, ocp_limit);
+                println!("12v page {:>2}: voltage = {:>5.2} v, current = {:>5.2} a, power = {:>6.1}, ocp limit = {:>5.1}", i, voltage, current, power, ocp_limit);
             }
         }
 
